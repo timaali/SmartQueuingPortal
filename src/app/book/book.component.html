@@ -1,0 +1,18 @@
+<div class="row">
+  <h2>Ticket being served is {{ ticketbeignserved.data }}</h2>
+  <div class="col-md-12 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Your ticket is {{ YourTicket.ticket_no }}</h4>
+        <h4 class="card-title">Book Ticket</h4>
+        <form class="forms-sample" (ngSubmit)="Book()">
+          <div class="form-group">
+            <label for="exampleInputName1">Phone Number</label>
+            <input type="text" class="form-control" id="exampleInputName1" [(ngModel)]="book.msisdn" name="msisdn" placeholder="Phone Number">
+          </div>
+          <button type="submit" class="btn btn-success mr-2">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

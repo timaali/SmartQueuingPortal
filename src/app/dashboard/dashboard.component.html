@@ -1,0 +1,63 @@
+<div class="row">
+  <h3>{{ success }}</h3>
+  <div class="col-lg-12 grid-margin">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Customers</h4>
+        <div class="table-responsive">
+          <table *ngIf="customers" class="table table-bordered">
+            <thead>
+              <tr>
+                <th>
+                  #
+                </th>
+                <th>
+                  Name
+                </th>
+                <th>
+                  Email
+                </th>
+                <th>
+                  Phone Number
+                </th>
+                <th>
+                  Created at
+                </th>
+                <th>
+                  Actions
+                </th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let customer of customers.data">
+              <tr>
+                <td class="font-weight-medium">
+                  {{ customer.id }}
+                </td>
+                <td>
+                  {{ customer.fname }}  {{ customer.lname }}
+                </td>
+                <td>
+                  {{ customer.email }}
+                </td>
+                <td>
+                    {{ customer.msisdn }}
+                  </td>
+                <td>
+                  {{ customer.created_at }}
+                </td>
+                <td>
+                  <div class="template-demo">
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                      <a type="button" [routerLink]="['/update/1/',customer.id]" class="btn btn-info">Update</a>
+                      <a type="button" (click)="deleteuser(customer.id)" class="btn btn-warning">Delete</a>
+                  </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

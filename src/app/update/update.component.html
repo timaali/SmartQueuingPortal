@@ -1,0 +1,81 @@
+<div class="row">
+    <h3>{{ success }}</h3>
+    <div class="col-md-12 grid-margin stretch-card" *ngIf="content == 1">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Update Customer</h4>
+          <form class="forms-sample" (ngSubmit)="update()">
+            <div class="form-group">
+              <label for="exampleInputName1">First Name</label>
+              <input type="text" class="form-control" id="exampleInputName1" [(ngModel)]="updator.fname" name="fname" placeholder="First Name">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputName1">Last Name</label>
+              <input type="text" class="form-control" id="exampleInputName1" [(ngModel)]="updator.lname" name="lname" placeholder="Last Name">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail3">Phone Number</label>
+                <input type="number" class="form-control" id="exampleInputEmail3" [(ngModel)]="updator.msisdn" name="msisdn" placeholder="msisdn">
+              </div>
+            <div class="form-group">
+              <label for="exampleInputEmail3">Email address</label>
+              <input type="email" class="form-control" id="exampleInputEmail3" [(ngModel)]="updator.email" name="email" placeholder="Email Address">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword4">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword4" [(ngModel)]="updator.password" name="password" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-success mr-2">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 grid-margin stretch-card" *ngIf="content == 2">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Update Service</h4>
+          <form class="forms-sample" (ngSubmit)="update()">
+            <div class="form-group">
+              <label for="exampleInputName1">Name</label>
+              <input type="text" class="form-control" id="exampleInputName1" [(ngModel)]="updator.name" name="name" placeholder="Name">
+            </div>
+            <button type="submit" class="btn btn-success mr-2">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 grid-margin stretch-card" *ngIf="content == 3">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Update Teller</h4>
+            <form class="forms-sample" (ngSubmit)="update()">
+              <div class="form-group">
+                <label for="exampleInputName1">First Name</label>
+                <input type="text" class="form-control" id="exampleInputName1" [(ngModel)]="updator.fname" name="fname" placeholder="First Name">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputName1">Last Name</label>
+                <input type="text" class="form-control" id="exampleInputName1" [(ngModel)]="updator.lname" name="lname" placeholder="Last Name">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputName1">Service Administering</label>
+                <div *ngFor="let service of services.data">
+                  <select class="form-control border-info" [(ngModel)]="updator.service_id" name="service_id" id="exampleSelectPrimary" >
+                    <option value={{service.id}}>{{ service.name }}</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail3">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail3" [(ngModel)]="updator.email" name="email" placeholder="Email Address">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword4">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword4" [(ngModel)]="updator.password" name="password" placeholder="Password">
+              </div>
+              <button type="submit" class="btn btn-success mr-2">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+  </div>

@@ -1,0 +1,47 @@
+<nav class="sidebar sidebar-offcanvas" id="sidebar">
+  <ul class="nav">
+    <li class="nav-item">
+      <div class="nav-link">
+        <i class="menu-icon mdi mdi-television"></i>
+        <div ngbDropdown class="d-inline-block">
+          <a class="btn btn-outline-secondary" routerLink="/dashboard" routerLinkActive="active" type="button" id="dropdownMenuOutlineButton2" ngbDropdownToggle>
+            Customers
+          </a>
+          <div ngbDropdownMenu aria-labelledby="dropdownMenuOutlineButton2">
+            <a class="dropdown-item" routerLink="/create/1" routerLinkActive="active">Create Customer</a>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li class="nav-item">
+      <div class="nav-link">
+        <i class="menu-icon mdi mdi-television"></i>
+        <div ngbDropdown class="d-inline-block">
+          <a class="btn btn-outline-secondary" routerLink="/services" routerLinkActive="active" type="button" id="dropdownMenuOutlineButton2" ngbDropdownToggle>
+            Services
+          </a>
+          <div ngbDropdownMenu aria-labelledby="dropdownMenuOutlineButton2">
+            <a class="dropdown-item" routerLink="/create/2" routerLinkActive="active">Create Service</a>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li class="nav-item">
+      <div class="nav-link">
+        <i class="menu-icon mdi mdi-television"></i>
+        <div ngbDropdown class="d-inline-block">
+          <a class="btn btn-outline-secondary" routerLink="/tellers" routerLinkActive="active" type="button" id="dropdownMenuOutlineButton2" ngbDropdownToggle>
+            Tellers
+          </a>
+          <div ngbDropdownMenu aria-labelledby="dropdownMenuOutlineButton2">
+            <a class="dropdown-item" routerLink="/create/3" routerLinkActive="active">Create Teller</a>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link">
+      </a>
+    </li>
+  </ul>
+</nav>

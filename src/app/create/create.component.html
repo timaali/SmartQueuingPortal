@@ -1,0 +1,83 @@
+<div class="row">
+  <h2>{{ success }}</h2>
+  <div class="col-md-12 grid-margin stretch-card" *ngIf="content == 1">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Create Customer</h4>
+        <form class="forms-sample" (ngSubmit)="create()">
+          <div class="form-group">
+            <label for="exampleInputName1">First Name</label>
+            <input type="text" class="form-control" id="exampleInputName1" [(ngModel)]="creator.fname" name="fname" placeholder="First Name">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputName1">Last Name</label>
+            <input type="text" class="form-control" id="exampleInputName1" [(ngModel)]="creator.lname" name="lname" placeholder="Last Name">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail3">Phone Number</label>
+            <input type="number" class="form-control" id="exampleInputEmail3" [(ngModel)]="creator.msisdn" name="msisdn" placeholder="Phone Number">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail3">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail3" [(ngModel)]="creator.email" name="email" placeholder="Email Address">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword4">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword4" [(ngModel)]="creator.password" name="password" placeholder="Password">
+          </div>
+          <button type="submit" class="btn btn-success mr-2">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-12 grid-margin stretch-card" *ngIf="content == 2">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Create Service</h4>
+        <form class="forms-sample" (ngSubmit)="create()">
+          <div class="form-group">
+            <label for="exampleInputName1">Name</label>
+            <input type="text" class="form-control" [(ngModel)]="creator.name" name="name" id="exampleInputName1" placeholder="Service Name">
+          </div>
+          <input type="text" [(ngModel)]="creator.number" name="number" value={{content}} hidden>
+          <button type="submit" class="btn btn-success mr-2">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-12 grid-margin stretch-card" *ngIf="content == 3">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Create Teller</h4>
+          <form class="forms-sample" (ngSubmit)="create()">
+            <div class="form-group">
+              <label for="exampleInputName1">First Name</label>
+              <input type="text" class="form-control" [(ngModel)]="creator.fname" name="fname" id="exampleInputName1" placeholder="First Name">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputName1">Last Name</label>
+              <input type="text" class="form-control" [(ngModel)]="creator.lname" name="lname" id="exampleInputName1" placeholder="Last Name">
+            </div>
+            <input type="text" [(ngModel)]="creator.number" name="number" value={{content}} hidden>
+            <div class="form-group">
+              <label for="exampleInputName1">Service Administering</label>
+              <div *ngFor="let service of services.data">
+                <select class="form-control border-info" [(ngModel)]="creator.service_id" name="service_id"  id="exampleSelectPrimary" >
+                  <option value={{service.id}}>{{ service.name }}</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail3">Email address</label>
+              <input type="email" class="form-control" [(ngModel)]="creator.email" name="email" id="exampleInputEmail3" placeholder="Email Address">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword4">Password</label>
+              <input type="password" class="form-control" [(ngModel)]="creator.password" name="password"  id="exampleInputPassword4" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-success mr-2">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+</div>
