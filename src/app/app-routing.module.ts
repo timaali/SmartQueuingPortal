@@ -1,3 +1,5 @@
+import { SelectServiceComponent } from './select-service/select-service.component';
+import { SelectCounterComponent } from './select-counter/select-counter.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -23,9 +25,10 @@ import { CreateComponent } from './create/create.component';
 import { UpdateComponent } from './update/update.component';
 import { TicketsComponent } from './tickets/tickets.component';
 import { BookComponent } from './book/book.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'forms', component: FormsComponent },
   { path: 'buttons', component: ButtonsComponent },
@@ -44,11 +47,14 @@ const routes: Routes = [
   { path: 'tabs', component: TabsComponent },
   { path: 'services', component: ServicesComponent },
   { path: 'tellers', component: TellersComponent },
-  { path: 'create/:component', component: CreateComponent },
+  { path: 'create/:component/:counter_id', component: CreateComponent },
   { path: 'update/:update/:id', component: UpdateComponent },
   { path: 'tickets/:ticket_id', component: TicketsComponent },
   { path: 'book/:teller_id', component: BookComponent },
-  { path: 'cancelticket/:ticket_id', component: TicketsComponent }
+  { path: 'cancelticket/:ticket_id', component: TicketsComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'selectService', component: SelectServiceComponent },
+  { path: 'selectCounter/:serviceId', component: SelectCounterComponent },
 ];
 
 @NgModule({

@@ -11,6 +11,7 @@ export class TellersComponent implements OnInit {
   tellers: Object;
   status: any;
   success: any;
+  userData: any
 
   constructor( private apiservice: ApiService ) { }
 
@@ -18,6 +19,7 @@ export class TellersComponent implements OnInit {
     this.apiservice.getTellers().subscribe(data => {
       this.tellers = data;
     })
+    this.userData = JSON.parse(localStorage.getItem('TOKEN'))
   }
 
   delete(teller_id: any){

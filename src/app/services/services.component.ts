@@ -11,6 +11,7 @@ export class ServicesComponent implements OnInit {
   services: Object;
   success: any;
   status: any;
+  userData: any
 
   constructor( private apiservice: ApiService ) { }
 
@@ -18,6 +19,7 @@ export class ServicesComponent implements OnInit {
     this.apiservice.getServices().subscribe(data => {
       this.services = data;
     })
+    this.userData = JSON.parse(localStorage.getItem('TOKEN'))
   }
 
   delete(service_id: any){

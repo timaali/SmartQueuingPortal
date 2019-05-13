@@ -33,6 +33,9 @@ import { CreateComponent } from './create/create.component';
 import { UpdateComponent } from './update/update.component';
 import { TicketsComponent } from './tickets/tickets.component';
 import { BookComponent } from './book/book.component';
+import { LoginComponent } from './login/login.component';
+import { SelectServiceComponent } from './select-service/select-service.component';
+import { SelectCounterComponent } from './select-counter/select-counter.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +64,10 @@ import { BookComponent } from './book/book.component';
     CreateComponent,
     UpdateComponent,
     TicketsComponent,
-    BookComponent
+    BookComponent,
+    LoginComponent,
+    SelectServiceComponent,
+    SelectCounterComponent
   ],
   imports: [
     BrowserModule,

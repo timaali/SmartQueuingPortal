@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -33,6 +34,17 @@ export class ApiService {
       items:'10',
     }
     return this.http.post(this.api+'/services/getallservices/', data)
+  }
+
+  getParticularCounter(counter_id: any){
+    const data={
+      counter_id:counter_id,
+    }
+    return this.http.post(this.api+'/services/getallservices/', data)
+  }
+
+  getCountersForService(service_id: any){
+    return this.http.post(this.api+'/counter/getCountersForService', service_id)
   }
 
   getTickets(teller_id: any){
@@ -93,6 +105,10 @@ export class ApiService {
 
   deleteteller(id: any){
     return this.http.post(this.api+'/tellers/deleteteller/', id)
+  }
+
+  login(data:any){
+    return this.http.post(this.api+'/login', data)
   }
 
 }

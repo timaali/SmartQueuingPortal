@@ -19,10 +19,11 @@ export class CreateComponent implements OnInit {
     name: ''
   }
   content: any;
-  services: Object;
+  counters: Object;
   number: any;
   success: any;
   status: any;
+  counter_id: any
 
   constructor( private activatedroute: ActivatedRoute, private apiservice: ApiService ) { }
 
@@ -37,8 +38,9 @@ export class CreateComponent implements OnInit {
         break;
       case '3':
         this.content = 3;
-        this.apiservice.getServices().subscribe(data => {
-          this.services = data;
+        this.counter_id = this.activatedroute.snapshot.paramMap.get('counter_id')
+        this.apiservice.getParticularCounter(this.counter_id).subscribe(data => {
+          this.counters = data;
         })
         break;
       default:
@@ -83,7 +85,7 @@ export class CreateComponent implements OnInit {
           fname:this.creator.fname,
           lname:this.creator.lname,
           email:this.creator.email,
-          service_id:this.creator.service_id,
+          counter_id:this.counter_id,
           password:this.creator.password,
         }
         this.apiservice.createTeller(dat).subscribe(response =>{

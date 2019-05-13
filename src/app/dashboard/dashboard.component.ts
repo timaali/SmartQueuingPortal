@@ -1,3 +1,4 @@
+import { CustomerService } from './../customer.service';
 import { Component, OnInit } from '@angular/core';
 import { ViewEncapsulation } from '@angular/core';
 import { ApiService } from '../api.service';
@@ -13,13 +14,15 @@ export class DashboardComponent implements OnInit {
   customers: Object;
   status: any;
   success: any;
+  userData: any
 
-  constructor( private apiservice: ApiService ) { }
+  constructor( private apiservice: ApiService, private customer: CustomerService ) { }
 
   ngOnInit() {
     this.apiservice.getCustomers().subscribe(data => {
       this.customers = data;
     })
+    this.userData = JSON.parse(localStorage.getItem('TOKEN'))
   }
 
   deleteuser(id: any){
