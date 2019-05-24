@@ -57,6 +57,7 @@ export class CreateComponent implements OnInit {
           email:this.creator.email,
           msisdn:this.creator.msisdn,
           password:this.creator.password,
+          role: 'CUSTOMER'
         }
         this.apiservice.createCustomer(data).subscribe(response =>{
           this.status = response
@@ -87,6 +88,7 @@ export class CreateComponent implements OnInit {
           email:this.creator.email,
           counter_id:this.counter_id,
           password:this.creator.password,
+          role: 'TELLER'
         }
         this.apiservice.createTeller(dat).subscribe(response =>{
           this.status = response
