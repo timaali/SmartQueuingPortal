@@ -25,7 +25,10 @@ export class CreateComponent implements OnInit {
   success: any;
   status: any;
   counter_id: any;
-  service_id: any
+  service_id: any;
+  data: any;
+  dat: any
+  datas: any
 
   constructor(private activatedroute: ActivatedRoute, private apiservice: ApiService) { }
 
@@ -56,7 +59,7 @@ export class CreateComponent implements OnInit {
   create() {
     switch (this.number) {
       case '1':
-        const data = {
+        this.data = {
           fname: this.creator.fname,
           lname: this.creator.lname,
           email: this.creator.email,
@@ -64,7 +67,7 @@ export class CreateComponent implements OnInit {
           password: this.creator.password,
           role: 'CUSTOMER'
         }
-        this.apiservice.createCustomer(data).subscribe(response => {
+        this.apiservice.createCustomer(this.data).subscribe(response => {
           this.status = response
           if (this.status.status_code == 200) {
             this.success = 'Customer successfully created'
@@ -74,10 +77,10 @@ export class CreateComponent implements OnInit {
         })
         break;
       case '2':
-        const datas = {
+        this.datas = {
           name: this.creator.name,
         }
-        this.apiservice.createService(datas).subscribe(response => {
+        this.apiservice.createService(this.datas).subscribe(response => {
           this.status = response
           if (this.status.status_code == 200) {
             this.success = 'Service successfully created'
@@ -87,7 +90,7 @@ export class CreateComponent implements OnInit {
         })
         break;
       case '3':
-        const dat = {
+        this.dat = {
           fname: this.creator.fname,
           lname: this.creator.lname,
           email: this.creator.email,
@@ -95,7 +98,7 @@ export class CreateComponent implements OnInit {
           password: this.creator.password,
           role: 'TELLER'
         }
-        this.apiservice.createTeller(dat).subscribe(response => {
+        this.apiservice.createTeller(this.dat).subscribe(response => {
           this.status = response
           if (this.status.status_code == 200) {
             this.success = 'Teller successfully created'
@@ -106,11 +109,11 @@ export class CreateComponent implements OnInit {
         break;
 
       case '4':
-        const dat = {
+        this.dat = {
           number: this.creator.number,
           service_id: this.activatedroute.snapshot.paramMap.get('counter_id')
         }
-        this.apiservice.createCounter(dat).subscribe(response => {
+        this.apiservice.createCounter(this.dat).subscribe(response => {
           this.status = response
           if (this.status.status_code == 200) {
             this.success = 'Counter successfully created'
