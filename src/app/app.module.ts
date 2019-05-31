@@ -36,6 +36,7 @@ import { BookComponent } from './book/book.component';
 import { LoginComponent } from './login/login.component';
 import { SelectServiceComponent } from './select-service/select-service.component';
 import { SelectCounterComponent } from './select-counter/select-counter.component';
+import { CounterServiceComponent } from './counter-service/counter-service.component';
 
 @NgModule({
   declarations: [
@@ -67,7 +68,8 @@ import { SelectCounterComponent } from './select-counter/select-counter.componen
     BookComponent,
     LoginComponent,
     SelectServiceComponent,
-    SelectCounterComponent
+    SelectCounterComponent,
+    CounterServiceComponent
   ],
   imports: [
     BrowserModule,

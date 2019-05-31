@@ -36,6 +36,7 @@
                   <td>
                     <div class="template-demo">
                       <div class="btn-group" role="group" aria-label="Basic example">
+                          <a type="button" [routerLink]="['/create/4/',service.id]" class="btn btn-info">Create Counter</a>
                         <a type="button" [routerLink]="['/update/3/',service.id]" class="btn btn-info">Update</a>
                         <a type="button" (click)="delete(service.id)" class="btn btn-warning">Delete</a>
                     </div>

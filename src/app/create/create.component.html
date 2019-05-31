@@ -60,12 +60,6 @@
             </div>
             <input type="text" [(ngModel)]="creator.number" name="number" value={{content}} hidden>
             <div class="form-group">
-              <label for="exampleInputName1">Service Administering</label>
-              <div *ngFor="let service of counters.data">
-                  <input type="email" class="form-control" value={{ service.details }} disabled>
-              </div>
-            </div>
-            <div class="form-group">
               <label for="exampleInputEmail3">Email address</label>
               <input type="email" class="form-control" [(ngModel)]="creator.email" name="email" id="exampleInputEmail3" placeholder="Email Address">
             </div>
@@ -78,4 +72,19 @@
         </div>
       </div>
     </div>
+
+    <div class="col-md-12 grid-margin stretch-card" *ngIf="content == 4">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Create Counter</h4>
+            <form class="forms-sample" (ngSubmit)="create()">
+              <div class="form-group">
+                <label for="exampleInputName1">Counter Number</label>
+                <input type="text" class="form-control" [(ngModel)]="creator.number" name="number" id="exampleInputName1" placeholder="Counter Number">
+              </div>
+              <button type="submit" class="btn btn-success mr-2">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
 </div>

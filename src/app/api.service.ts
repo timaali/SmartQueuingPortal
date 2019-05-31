@@ -47,6 +47,10 @@ export class ApiService {
     return this.http.post(this.api+'/counter/getCountersForService', service_id)
   }
 
+  getCounters(service_id: any){
+    return this.http.post(this.api+'/counters/getCountersService', service_id)
+  }
+
   getTickets(teller_id: any){
     const data={
       teller_id: teller_id,
@@ -73,6 +77,10 @@ export class ApiService {
 
   createService(data: any){
     return this.http.post(this.api+'/services/createservice/', data)
+  }
+
+  createCounter(data: any){
+    return this.http.post(this.api+'/counter/createcounter/', data)
   }
 
   createTeller(data: any){

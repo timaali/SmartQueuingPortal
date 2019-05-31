@@ -1,0 +1,54 @@
+<div class="row">
+  <h3>{{ success }}</h3>
+  <div class="col-lg-12 grid-margin">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Counter</h4>
+        <div class="table-responsive">
+          <table *ngIf="counters" class="table table-bordered">
+            <thead>
+              <tr>
+                <th>
+                  #
+                </th>
+                <th>
+                  Counter Number
+                </th>
+                <th>
+                  Service Name
+                </th>
+                <th>
+                  Created at
+                </th>
+                <th>
+                  Actions
+                </th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let service of counters">
+              <tr>
+                <td class="font-weight-medium">
+                  {{ service.id }}
+                </td>
+                <td>
+                  {{ service.number }}
+                </td>
+                <td>
+                  {{ service.service_name }}
+                </td>
+                <td>
+                  {{ service.created_at }}
+                </td>
+                <td>
+                  <div  *ngIf="userData.role === 'SUPER'">
+                      <a type="button" [routerLink]="['/create/3',service.id]" class="btn btn-info">Create Teller</a>
+                    </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

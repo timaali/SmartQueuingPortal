@@ -26,6 +26,7 @@ import { UpdateComponent } from './update/update.component';
 import { TicketsComponent } from './tickets/tickets.component';
 import { BookComponent } from './book/book.component';
 import { LoginComponent } from './login/login.component';
+import { CounterServiceComponent } from './counter-service/counter-service.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -55,6 +56,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'selectService', component: SelectServiceComponent },
   { path: 'selectCounter/:serviceId', component: SelectCounterComponent },
+  { path: 'CounterService/:serviceId', component: CounterServiceComponent },
 ];
 
 @NgModule({
